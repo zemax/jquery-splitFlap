@@ -8,7 +8,12 @@
 		this.settings = settings;
 
 		this.domObject = document.createElement('div');
-		$(this.domObject).addClass("char");
+		$(this.domObject)
+			.css('-webkit-transform-style', 'preserve-3d')
+			.css(   '-moz-transform-style', 'preserve-3d')
+			.css(    '-ms-transform-style', 'preserve-3d')
+			.css(        'transform-style', 'preserve-3d')
+			.addClass("char");
 
 		this.upperObject = document.createElement('div');
 		this.lowerObject = document.createElement('div');
@@ -76,7 +81,13 @@
 					.css('top', 0)
 					.css('z-index', Math.round(d))
 					.css('-webkit-transform', 'rotateX(-' + d + 'deg)')
-					.css('-webkit-transform-origin', 'bottom center')
+					.css(   '-moz-transform', 'rotateX(-' + d + 'deg)')
+					.css(    '-ms-transform', 'rotateX(-' + d + 'deg)')
+					.css(        'transform', 'rotateX(-' + d + 'deg)')
+					.css('-webkit-transform-origin', 'bottom center 0')
+					.css(   '-moz-transform-origin', 'bottom center 0')
+					.css(    '-ms-transform-origin', 'bottom center 0')
+					.css(        'transform-origin', 'bottom center 0')
 					.css('background-position', '-' + (offsetFrom * this.settings.charWidth) + 'px 0px');
 			}
 			else {
@@ -85,7 +96,13 @@
 					.css('top', (this.settings.charHeight >> 1) + 'px')
 					.css('z-index', Math.round(d))
 					.css('-webkit-transform', 'rotateX(' + d + 'deg)')
-					.css('-webkit-transform-origin', 'top center')
+					.css(   '-moz-transform', 'rotateX(' + d + 'deg)')
+					.css(    '-ms-transform', 'rotateX(' + d + 'deg)')
+					.css(        'transform', 'rotateX(' + d + 'deg)')
+					.css('-webkit-transform-origin', 'top center 0')
+					.css(   '-moz-transform-origin', 'top center 0')
+					.css(    '-ms-transform-origin', 'top center 0')
+					.css(        'transform-origin', 'top center 0')
 					.css('background-position', '-' + (offset * this.settings.charWidth) + 'px -' + (this.settings.charHeight >> 1) + 'px');
 			}
 			$(this.flippingObject).show();

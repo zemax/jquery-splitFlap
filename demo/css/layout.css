@@ -10,6 +10,21 @@ body {
 
 .splitflap {
 	margin: 20px auto;
+	
 	-webkit-perspective-origin: top center;
-	-webkit-perspective: 900;
+	   -moz-perspective-origin: top center;
+	    -ms-perspective-origin: top center;
+	        perspective-origin: top center;
+			
+	-webkit-perspective: 900px;
+	   -moz-perspective: 900px;
+	    -ms-perspective: 900px;
+	        perspective: 900px;
+}
+
+.splitflap .char {
+	-webkit-transform-style: preserve-3d;
+	   -moz-transform-style: preserve-3d;
+	    -ms-transform-style: preserve-3d;
+	        transform-style: preserve-3d;
 }
