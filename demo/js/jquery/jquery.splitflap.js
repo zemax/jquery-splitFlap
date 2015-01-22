@@ -115,6 +115,10 @@
 		return this.domObject;
 	}
 
+	lp.getCharOffset = function (char) {
+		return Math.max(0, this.settings.charsMap.indexOf(char));
+	}
+
 	/**
 	 * Set Letter character
 	 * @param char
@@ -126,7 +130,8 @@
 			ratio = 1;
 		}
 
-		var offset = this.settings.charsMap.indexOf(char);
+		var offset = this.getCharOffset(char);
+
 		$(this.upperObject).css({
 			'background-position': '-' + (offset * this.settings.charWidth) + 'px 0px'
 		});
@@ -138,7 +143,7 @@
 			$(this.flippingObject).hide();
 		}
 		else if ( ratio <= 0 ) {
-			var offsetFrom = this.settings.charsMap.indexOf(charFrom);
+			var offsetFrom = this.getCharOffset(charFrom);
 			$(this.upperObject).css({
 				'background-position': '-' + (offsetFrom * this.settings.charWidth) + 'px 0px'
 			});
@@ -148,7 +153,7 @@
 			$(this.flippingObject).hide();
 		}
 		else {
-			var offsetFrom = this.settings.charsMap.indexOf(charFrom);
+			var offsetFrom = this.getCharOffset(charFrom);
 			$(this.lowerObject).css({
 				'background-position': '-' + (offsetFrom * this.settings.charWidth) + 'px -' + (this.settings.charHeight >> 1) + 'px'
 			});
@@ -288,7 +293,7 @@
 					letters: new Array(charsFrom[ i ])
 				};
 
-				var index = this.settings.charsMap.indexOf(charsFrom[ i ]);
+				var index = this.letters[ i ].getCharOffset(charsFrom[ i ]);
 				while ( this.settings.charsMap.charAt(index) != chars[ i ] ) {
 					index = (index + 1) % this.settings.charsMap.length;
 					al.letters.push(this.settings.charsMap.charAt(index));
@@ -364,6 +369,7 @@
 			charsMap:       'ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.,!?#@()+-=',
 			charWidth:      50,
 			charHeight:     100,
+			charSubstitute: ' ',
 			padDir:         'left',
 			padChar:        ' ',
 			speed:          3,
@@ -374,8 +380,23 @@
 
 		return this.each(function () {
 			var text = (new String($(this).html())).toUpperCase();
+			// Verify chars
+			for ( var i = 0, l = text.length; i < l; i++ ) {
+				var c = text.charAt(i);
+				if ( settings.charsMap.indexOf(c) < 0 ) {
+					text = text.replace(c, settings.charSubstitute);
+				}
+			}
 
 			var textInit = settings.textInit.toUpperCase().substr(0, text.length);
+			// Verify chars
+			for ( var i = 0, l = textInit.length; i < l; i++ ) {
+				var c = textInit.charAt(i);
+				if ( settings.charsMap.indexOf(c) < 0 ) {
+					textInit = textInit.replace(c, settings.charSubstitute);
+				}
+			}
+
 			while ( textInit.length < text.length ) {
 				textInit = textInit + settings.charsMap.charAt(Math.floor(settings.charsMap.length * Math.random()));
 			}
