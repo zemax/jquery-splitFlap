@@ -1,7 +1,7 @@
 jquery-splitFlap
 ================
 
-jQuery module to transform a div text into splitflap display (airport-like)
+jQuery module to transform a div text into splitflap display (airport-like).
 
 [View the Demo &rarr;](http://htmlpreview.github.io/?https://github.com/zemax/jquery-splitFlap/blob/master/demo/index.html)
 
@@ -37,37 +37,39 @@ $('.my-spliflap').splitFlap({
 ```
 
 ### image
-The path to the image used by the splitflap
-You will certainly need to change *charsMap*, *charWidth* and *charHeight* if you change this
+The path to the image used by the splitflap.
+
+You will certainly need to change *charsMap*, *charWidth* and *charHeight* if you change this.
 
 ### charsMap
-The string represented in the image
+The string represented in the image.
 
 ### charWidth
-The width of a character in the image, in pixels
+The width of a character in the image, in pixels.
 
 ### charHeight
-The height of a character in the image, in pixels
+The height of a character in the image, in pixels.
 
 ### charSubstitute
-The character used when the string contains a character not found in the charsMap
+The character used when the string contains a character not found in the charsMap.
 
 ### speed
-The speed of the rotation, in letter by seconds
+The speed of the rotation, in letter by seconds.
 
 ### speedVariation
-Random speed added to the fixed speed
+Random speed added to the fixed speed.
 
 ### textInit
-The initial string the animation begin with
+The initial string the animation begin with.
 
 ### autoplay
-If set to false, you'll need to start the animation manually (see below) :
+If set to false, you'll need to start the animation manually (see below).
 
 Special options
 ---------------
 
 If the string 'splitflap' is passed as options on an already existing Splitflaped div, the internal SplitFlap object is returned.
+
 With this object, you can start the animation manually by calling the animate() method.
 
 ``` javascript
