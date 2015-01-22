@@ -73,6 +73,9 @@ If the string 'splitflap' is passed as options on an already existing Splitflape
 With this object, you can start the animation manually by calling the animate() method.
 
 ``` javascript
+// Initialise the animation
+$('.my-spliflap').splitFlap({autoplay: false});
+
 // Get the animation object and start it manually
-$('.my-spliflap').splitFlap('splitflap).animate();
+$('.my-spliflap').splitFlap('splitflap').animate();
 ```
