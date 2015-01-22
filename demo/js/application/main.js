@@ -11,5 +11,10 @@
 				.click(function () {
 					$(this).splitFlap('splitflap').animate();
 				});
+
+		$('.empty-splitflap')
+				.splitFlap({
+					text: 'This text was created from js'
+				});
 	});
 })(jQuery);

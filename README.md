@@ -31,6 +31,7 @@ $('.my-spliflap').splitFlap({
 	charSubstitute: ' ',
 	speed:          3,
 	speedVariation: 2,
+	text:           '',
 	textInit:       '',
 	autoplay:       true
 });
@@ -58,6 +59,9 @@ The speed of the rotation, in letter by seconds.
 
 ### speedVariation
 Random speed added to the fixed speed.
+
+### text
+The destination text. If empty, the content of the element is used.
 
 ### textInit
 The initial string the animation begin with.

@@ -374,12 +374,17 @@
 			padChar:        ' ',
 			speed:          3,
 			speedVariation: 2,
+			text:           '',
 			textInit:       '',
 			autoplay:       true
 		}, options);
 
 		return this.each(function () {
-			var text = (new String($(this).html())).toUpperCase();
+			var text = (new String(settings.text)).toUpperCase();
+			if ( text == '' ) {
+				text = (new String($(this).html())).toUpperCase();
+			}
+
 			// Verify chars
 			for ( var i = 0, l = text.length; i < l; i++ ) {
 				var c = text.charAt(i);
