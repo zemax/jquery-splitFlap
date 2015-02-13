@@ -3,7 +3,7 @@ jquery-splitFlap
 
 jQuery module to transform a div text into splitflap display (airport-like).
 
-[View the Demo &rarr;](http://htmlpreview.github.io/?https://github.com/zemax/jquery-splitFlap/blob/master/demo/index.html)
+[View the Demo &rarr;](http://lab.les-mains-dans-le-code.fr/splitflap/)
 
 How to use
 ----------
