@@ -44,39 +44,6 @@
             perspective: 900px;
         }
     </style>
-
-    <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
-    <script src="js/jquery/jquery.splitflap.js"></script>
-    <script>
-        (function ($) {
-            $(document).ready(function () {
-                $('.do-splitflap')
-                        .splitFlap();
-
-                $('.click-splitflap')
-                        .splitFlap({
-                            textInit: 'Click me ',
-                            autoplay: false
-                        })
-                        .click(function () {
-                            $(this).splitFlap('splitflap').animate();
-                        });
-
-                $('.empty-splitflap')
-                        .splitFlap({
-                            text: 'This is JS'
-                        });
-
-                var ratio = 0.5;
-                $('.resized-splitflap')
-                        .splitFlap({
-                            charWidth:  50 * ratio,
-                            charHeight: 100 * ratio,
-                            imageSize:  (2500 * ratio) + 'px ' + (100 * ratio) + 'px'
-                        });
-            });
-        })(jQuery);
-    </script>
 </head>
 
 <body>
@@ -103,5 +70,38 @@
 
     <div class="resized-splitflap">It s a Small World</div>
 </div>
+
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script src="js/jquery/jquery.splitflap.js"></script>
+<script>
+    (function ($) {
+        $(document).ready(function () {
+            $('.do-splitflap')
+                    .splitFlap();
+
+            $('.click-splitflap')
+                    .splitFlap({
+                        textInit: 'Click me ',
+                        autoplay: false
+                    })
+                    .click(function () {
+                        $(this).splitFlap('splitflap').animate();
+                    });
+
+            $('.empty-splitflap')
+                    .splitFlap({
+                        text: 'This is JS'
+                    });
+
+            var ratio = 0.5;
+            $('.resized-splitflap')
+                    .splitFlap({
+                        charWidth:  50 * ratio,
+                        charHeight: 100 * ratio,
+                        imageSize:  (2500 * ratio) + 'px ' + (100 * ratio) + 'px'
+                    });
+        });
+    })(jQuery);
+</script>
 </body>
 </html>
