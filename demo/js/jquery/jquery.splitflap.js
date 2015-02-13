@@ -71,31 +71,33 @@
 		this.lowerObject = document.createElement('div');
 		this.flippingObject = document.createElement('div');
 
+		var c = {
+			'background-image': 'url(' + this.settings.image + ')'
+		};
+		if ( this.settings.imageSize != '' ) {
+			c[ 'background-size' ] = this.settings.imageSize;
+		}
+
 		$(this.upperObject)
 				.width(this.settings.charWidth)
 				.height(this.settings.charHeight >> 1)
-				.css({
-					'background-image': 'url(' + this.settings.image + ')'
-				})
+				.css(c)
 				.addClass("upper");
 
 		$(this.lowerObject)
 				.width(this.settings.charWidth)
 				.height(this.settings.charHeight >> 1)
-				.css({
-					'background-image': 'url(' + this.settings.image + ')'
-				})
+				.css(c)
 				.addClass("lower");
 
 		$(this.flippingObject)
 				.width(this.settings.charWidth)
 				.height(this.settings.charHeight >> 1)
-				.css({
-					'background-image': 'url(' + this.settings.image + ')',
-					'position':         'absolute',
-					'left':             0,
-					'top':              0
-				})
+				.css($.extend(c, {
+					'position': 'absolute',
+					'left':     0,
+					'top':      0
+				}))
 				.hide()
 				.addClass("flipping");
 
@@ -366,6 +368,7 @@
 
 		var settings = $.extend({
 			image:          'images/chars.png',
+			imageSize:      '',
 			charsMap:       'ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.,!?#@()+-=',
 			charWidth:      50,
 			charHeight:     100,

@@ -25,6 +25,7 @@ You can pass options to the function
 // Default :
 $('.my-spliflap').splitFlap({
 	image:          'images/chars.png',
+	imageSize:      '',
 	charsMap:       'ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789.,!?#@()+-=',
 	charWidth:      50,
 	charHeight:     100,
@@ -39,6 +40,9 @@ $('.my-spliflap').splitFlap({
 
 ### image
 The path to the image used by the splitflap.
+
+### imageSize
+If used on a non-natural size (ie for HDPI, etc...), the size of the image can be specified here, in CSS "background-position" format.
 
 You will certainly need to change *charsMap*, *charWidth* and *charHeight* if you change this.
 
