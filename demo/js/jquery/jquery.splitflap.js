@@ -346,6 +346,9 @@
 		if ( n > 0 ) {
 			requestAnimationFrame(bind(this.animate, this));
 		}
+		else {
+			this.settings.onComplete(this);
+		}
 	}
 
 	/***************************************************************************
@@ -379,7 +382,8 @@
 			speedVariation: 2,
 			text:           '',
 			textInit:       '',
-			autoplay:       true
+			autoplay:       true,
+			onComplete:     function () {}
 		}, options);
 
 		return this.each(function () {

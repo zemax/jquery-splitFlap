@@ -34,7 +34,8 @@ $('.my-spliflap').splitFlap({
 	speedVariation: 2,
 	text:           '',
 	textInit:       '',
-	autoplay:       true
+	autoplay:       true,
+	onComplete:		function(){}
 });
 ```
 
@@ -72,6 +73,9 @@ The initial string the animation begin with.
 
 ### autoplay
 If set to false, you'll need to start the animation manually (see below).
+
+### onComplete
+Callback function when the aniamtion is complete.
 
 Special options
 ---------------
