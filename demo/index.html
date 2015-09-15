@@ -70,6 +70,13 @@
     <div class="resized-splitflap">It s a Small World</div>
 </div>
 
+
+<div class="example">
+    <h1>Chained splitflaps</h1>
+
+    <div class="chained-splitflap"></div>
+</div>
+
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="js/jquery/jquery.splitflap.js"></script>
 <script>
@@ -101,6 +108,19 @@
                         charWidth:  50 * ratio,
                         charHeight: 100 * ratio,
                         imageSize:  (2500 * ratio) + 'px ' + (100 * ratio) + 'px'
+                    });
+                    
+            $('.chained-splitflap')
+                    .splitFlap({
+                        text: 'Hello',
+                        onComplete: function() {
+                        	setTimeout(function(){
+	                        	$('.chained-splitflap').splitFlap({
+    	                    		text: 'World',
+    	                    		textInit: 'Hello'
+        	                	});
+       	                	}, 3000);
+                        }
                     });
         });
     })(jQuery);
